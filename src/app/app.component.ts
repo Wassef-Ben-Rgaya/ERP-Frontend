@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'projet-ds-soa';
+export class AppComponent implements OnInit {
+    
+  
+    
+    constructor() {}
+      
+    ngOnInit(): void {}
+  
+  
 }

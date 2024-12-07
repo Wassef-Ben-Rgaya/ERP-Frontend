@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+<h1>Calcul du Salaire</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Matricule</th>
+      <th>Salaire Brut</th>
+      <th>Salaire Net</th>
+      <th>Date Paiement</th>
+      <th>Prime</th>
+      <th>Periode</th>
+      <th>Nombre De Jours</th>
+      <th>Salaire Calculé</th> <!-- Changement du nom de la colonne -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let paye of payes">
+      <td>{{ paye.matricule }}</td>
+      <td>{{ paye.salairebrut }}€</td>
+      <td>{{ paye.salairenet }}€</td>
+      <td>{{ paye.datepaiement | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ paye.prime }}€</td>
+      <td>{{ paye.periode | date: 'MMMM yyyy' }}</td>
+      <td>{{ paye.nombredejours }}</td>
+      <td>{{ paye.calculatedSalary ? paye.calculatedSalary + '€' : '' }}</td> <!-- Utilisation de la nouvelle propriété -->
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="calculateSalaries()" class="button ajouter__submit">
+  <span class="material-symbols-outlined">calculate</span>
+</button>

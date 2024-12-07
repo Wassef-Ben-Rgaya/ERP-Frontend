@@ -1,0 +1,148 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+<div class="container">
+  <app-rh></app-rh>
+  <div class="testbox">
+    <hr>
+    <h1>Ajouter Personnel</h1>
+    <hr>
+    <form [formGroup]="personnelForm" (ngSubmit)="onSubmit()">
+      <div class="left">
+        <div class="form-group">
+          <label id="icon" for="matricule"><span class="material-symbols-outlined">badge</span></label>
+          <input type="text" formControlName="matricule" id="matricule" placeholder="Matricule" required/>
+          <div *ngIf="personnelForm.get('matricule')?.invalid && personnelForm.get('matricule')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('matricule')?.hasError('required')">Le matricule est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('matricule')?.hasError('minlength')">Le matricule doit comporter au moins 2 caractères.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="nom"><i class="icon-user" aria-hidden="true"></i></label>
+          <input type="text" formControlName="nom" id="nom" placeholder="Nom" required/>
+          <div *ngIf="personnelForm.get('nom')?.invalid && personnelForm.get('nom')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('nom')?.hasError('required')">Le nom est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('nom')?.hasError('minlength')">Le nom doit comporter au moins 2 caractères.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="prenom"><i class="icon-user"></i></label>
+          <input type="text" formControlName="prenom" id="prenom" placeholder="Prénom" required/>
+          <div *ngIf="personnelForm.get('prenom')?.invalid && personnelForm.get('prenom')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('prenom')?.hasError('required')">Le prénom est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('prenom')?.hasError('minlength')">Le prénom doit comporter au moins 2 caractères.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="dateNaissance"><i class="icon-calendar"></i></label>
+          <input type="date" formControlName="Datenaissance" id="dateNaissance" required/>
+          <div *ngIf="personnelForm.get('Datenaissance')?.invalid && personnelForm.get('Datenaissance')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('Datenaissance')?.hasError('required')">La date de naissance est requise.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="adresse"><i class="icon-home"></i></label>
+          <input type="text" formControlName="adresse" id="adresse" placeholder="Adresse" required/>
+          <div *ngIf="personnelForm.get('adresse')?.invalid && personnelForm.get('adresse')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('adresse')?.hasError('required')">L'adresse est requise.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('adresse')?.hasError('minlength')">L'adresse doit comporter au moins 5 caractères.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="email"><i class="icon-envelope"></i></label>
+          <input type="email" formControlName="email" id="email" placeholder="Email" required/>
+          <div *ngIf="personnelForm.get('email')?.invalid && personnelForm.get('email')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('email')?.hasError('required')">L'email est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('email')?.hasError('email')">L'email n'est pas valide.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="mdp"><i class="icon-shield"></i></label>
+          <input type="password" formControlName="mdp" id="mdp" placeholder="Mot de passe" required/>
+          <div *ngIf="personnelForm.get('mdp')?.invalid && personnelForm.get('mdp')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('mdp')?.hasError('required')">Le mot de passe est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('mdp')?.hasError('minlength')">Le mot de passe doit comporter au moins 6 caractères.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="telephone"><i class="icon-phone"></i></label>
+          <input type="text" formControlName="numeroTelephone" id="telephone" placeholder="Numéro de téléphone" required/>
+          <div *ngIf="personnelForm.get('numeroTelephone')?.invalid && personnelForm.get('numeroTelephone')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('numeroTelephone')?.hasError('required')">Le numéro de téléphone est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('numeroTelephone')?.hasError('pattern')">Le numéro de téléphone doit comporter 8 chiffres.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="statutFamiliale"><i class="icon-heart"></i></label>
+          <select formControlName="statutFamiliale" id="statutFamiliale" required>
+            <option value="" disabled selected>Statut familiale</option>
+            <option value="célibataire">Célibataire</option>
+            <option value="marié">Marié</option>
+            <option value="divorcé">Divorcé</option>
+            <option value="veuf">Veuf</option>
+          </select>
+          <div *ngIf="personnelForm.get('statutFamiliale')?.invalid && personnelForm.get('statutFamiliale')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('statutFamiliale')?.hasError('required')">Le statut familial est requis.</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="right">
+        <div class="form-group">
+          <label id="icon" for="departementId"><span class="material-symbols-outlined">apartment</span></label>
+          <input type="text" formControlName="departementId" id="departementId" placeholder="Département" required/>
+          <div *ngIf="personnelForm.get('departementId')?.invalid && personnelForm.get('departementId')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('departementId')?.hasError('required')">Le département est requis.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="poste"><i class="icon-briefcase"></i></label>
+          <input type="text" formControlName="poste" id="poste" placeholder="Poste" required/>
+          <div *ngIf="personnelForm.get('poste')?.invalid && personnelForm.get('poste')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('poste')?.hasError('required')">Le poste est requis.</small>
+            <small class="text-danger" *ngIf="personnelForm.get('poste')?.hasError('minlength')">Le poste doit comporter au moins 2 caractères.</small>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label id="icon" for="dateEmbauche"><i class="icon-calendar"></i></label>
+          <input type="date" formControlName="dateEmbauche" id="dateEmbauche" required/>
+          <div *ngIf="personnelForm.get('dateEmbauche')?.invalid && personnelForm.get('dateEmbauche')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('dateEmbauche')?.hasError('required')">La date d'embauche est requise.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="icon" for="typeContrat"><span class="material-symbols-outlined">contract</span></label>
+          <select formControlName="typeContrat" id="typeContrat" required>
+            <option value="" disabled selected>Type de contrat</option>
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="Intérim">CIVP</option>
+            <option value="Stage">Stage</option>
+          </select>
+          <div *ngIf="personnelForm.get('typeContrat')?.invalid && personnelForm.get('typeContrat')?.touched">
+            <small class="text-danger" *ngIf="personnelForm.get('typeContrat')?.hasError('required')">Le type de contrat est requis.</small>
+          </div>
+        </div>
+
+        <button class="button ajouter__submit" type="submit">
+          <span class="button__text">Ajouter</span>
+          <i class="button__icon fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

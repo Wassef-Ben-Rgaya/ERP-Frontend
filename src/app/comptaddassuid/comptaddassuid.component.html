@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+<div class="testbox">
+  <hr>
+  <h1>Assiduité</h1>
+  <hr>
+
+  <form action="/">
+    <div class="columns">
+      <div class="column">
+        <h2>Date De Paiement</h2>
+        <div class="form-group">
+            <label id="icon" for="Date"><span class="material-symbols-outlined">today</span></label>
+            <input type="date" name="Date" id="Date" placeholder="Date De Paiement" />
+            
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="column">
+        <h2>Periode</h2>
+        <div class="form-group">
+            <label id="icon" for="Date"><span class="material-symbols-outlined">calendar_month</span></label>
+            <input type="month" name="Date" id="Date" placeholder="Periode" />
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="column">
+        <h2>Nombre De jours</h2>
+        <div class="form-group">
+          <label id="icon" for="Date"><span class="material-symbols-outlined">pin</span></label>
+          <input type="number" name="number" id="number" placeholder="Jour" min="1" max="31" />
+        </div>
+      </div>
+
+    </div>
+
+    <button class="button ajouter__submit">
+      <span class="button__text">Ajouter</span>
+      <i class="button__icon fas fa-chevron-right"></i>
+    </button>
+  </form>
+</div>

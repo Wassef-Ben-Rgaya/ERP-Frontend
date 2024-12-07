@@ -1,0 +1,27 @@
+<div class="topnav">
+    <div class="personnel_button">
+      <button (click)="togglePersonnelMenu()">Personnel</button>
+      <div *ngIf="isPersonnelMenuVisible" class="menu-items">
+        <button [routerLink]="['/profil']">Profil</button>
+        <button [routerLink]="['/conge']">Congé</button>
+        <button [routerLink]="['/permission']">Permission</button>
+        <button [routerLink]="['/assiduité']">Assiduité</button>
+        <button [routerLink]="['/paye']">Paye</button>
+        <button type="submit" class="button__submit">
+          <span class="button__text">Log out</span>
+        </button>
+      </div>
+    </div>
+    <div class="personnel_button">
+      <button (click)="toggleRHMenu()">RH</button>
+      <div *ngIf="isRHMenuVisible" class="menu-items">
+        <button [routerLink]="['/profil']">Profil</button>
+        <button [routerLink]="['/assiduité']">Assiduité</button>
+        <button [routerLink]="['/paye']">Paye</button>
+        <button type="submit" class="button__submit">
+          <span class="button__text">Log out</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,82 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+<div class="testbox">
+  <hr>
+  <h1>Assiduité</h1>
+  <div class="form-group">
+          <label id="icon" for="matricule"><span class="material-symbols-outlined">badge</span></label>
+          <input type="text" name="matricule" id="matricule" placeholder="Matricule" required/>
+        </div>
+  <hr>
+
+  <form action="/">
+    <div class="columns">
+      <div class="column">
+        <h2>Horaire</h2>
+        <div class="form-group">
+          <label id="icon" for="Heure Début"><span class="material-symbols-outlined">schedule</span></label>
+          <input type="time" name="Heure Début" id="Heure Début" placeholder="Heure Début" />
+        </div>
+        <div class="form-group">
+          <label id="icon" for="Heure Fin"><span class="material-symbols-outlined">schedule</span></label>
+          <input type="time" name="Heure Fin" id="Heure Fin" placeholder="Heure Fin" />
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="column">
+        <h2>Heure Supplémentaire</h2>
+        <div class="form-group">
+          <label id="icon" for="Heure Supplémentaire Début"><span class="material-symbols-outlined">timelapse</span></label>
+          <input type="time" name="Heure Supplémentaire Début" id="Heure Supplémentaire Début" placeholder="Heure Début" />
+        </div>
+        <div class="form-group">
+          <label id="icon" for="Heure Supplémentaire Fin"><span class="material-symbols-outlined">timelapse</span></label>
+          <input type="time" name="Heure Supplémentaire Fin" id="Heure Supplémentaire Fin" placeholder="Heure Fin" />
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="column">
+        <h2>Retard</h2>
+        <div class="form-group">
+          <label id="icon" for="Date"><span class="material-symbols-outlined">calendar_month</span></label>
+          <input type="date" name="Date" id="Date" placeholder="Date" />
+        </div>
+        <div class="form-group">
+          <label id="icon" for="Duré"><span class="material-symbols-outlined">av_timer</span></label>
+          <input type="time" name="Duré" id="Duré" placeholder="Duré" />
+        </div>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="column">
+        <h2>Absence</h2>
+        <div class="form-group">
+          <label id="icon" for="Absence Date"><span class="material-symbols-outlined">calendar_month</span></label>
+          <input type="date" name="Absence Date" id="Absence Date" placeholder="Date" />
+        </div>
+        <div class="form-group">
+          <label id="icon" for="typeContrat"><span class="material-symbols-outlined">fact_check</span></label>
+          <select name="typeContrat" id="typeContrat" >
+            <option value="" disabled selected>Justifiée</option>
+            <option value="OUI">OUI</option>
+            <option value="NON">NON</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button class="button ajouter__submit">
+      <span class="button__text">Ajouter</span>
+      <i class="button__icon fas fa-chevron-right"></i>
+    </button>
+  </form>
+</div>

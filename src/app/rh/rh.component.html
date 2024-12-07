@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+
+
+  <div class="topnav" [class.visible]="isMenuVisible">
+    <div class="personnel_button">
+      <button (click)="toggleMenu()"> <span class="material-symbols-outlined">menu</span> RH</button>
+    </div>
+    <div *ngIf="isMenuVisible" class="menu-items">
+      <button [routerLink]="['/addpersonnel']">Ajout de Personnel</button>
+      <button [routerLink]="['/listepersonnel']">Liste du Personnel</button>
+      <button [routerLink]="['/validationconge']">Congé</button>
+      <button [routerLink]="['/validationpermission']">Permission</button>
+        <button [routerLink]="['/assiduite']">Assiduité</button>
+        <button [routerLink]="['/validpaye']">Paye</button>
+         
+
+        <button (click)="logout()" class="button__submit">Logout</button>
+      </div>
+    
+  </div>
+  

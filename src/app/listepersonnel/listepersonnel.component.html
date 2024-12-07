@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+<h1>Liste du personnel</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Matricule</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Date de naissance</th>
+      <th>Adresse</th>
+      <th>Email</th>
+      <th>Mot de passe</th>
+      <th>Numéro Tél</th>
+      <th>Statut Familiale</th>
+      <th>Département</th>
+      <th>Poste</th>
+      <th>Date d'embauche</th>
+      <th>Type de contrat</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employe of personnelList">
+      <td>{{ employe.matricule }}</td>
+      <td>{{ employe.nom }}</td>
+      <td>{{ employe.prenom }}</td>
+      <td>{{ employe.Datenaissance | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ employe.adresse }}</td>
+      <td>{{ employe.email }}</td>
+      <td>********</td>
+      <td>{{ employe.numeroTelephone }}</td>
+      <td>{{ employe.statutFamiliale }}</td>
+      <td>{{ employe.departementId }}</td>
+      <td>{{ employe.poste }}</td>
+      <td>{{ employe.dateEmbauche | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ employe.typeContrat }}</td>
+      <td class="action-icons">
+        <button [routerLink]="['/updpersonnel', employe.matricule]">
+          <span class="material-symbols-outlined">manage_accounts</span>
+        </button>
+        <button class="btn-delete" (click)="confirmDelete(employe.matricule)">
+          <span class="material-symbols-outlined">delete</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button [routerLink]="['/addpersonnel']" class="ajouter__submit">
+  <span class="material-symbols-outlined">person_add</span>
+</button>

@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+
+<div class="topnav" [class.visible]="isMenuVisible">
+    <div class="personnel_button">
+      <button (click)="toggleMenu()"> <span class="material-symbols-outlined">menu</span>  <span class="material-symbols-outlined">supervisor_account</span></button>
+    </div>
+    <div *ngIf="isMenuVisible" class="menu-items">
+      <button [routerLink]="['/profil']">Profil</button>
+      <button [routerLink]="['/conge']">Congé</button>
+      <button [routerLink]="['/permission']">Permission</button>
+      <button [routerLink]="['/listassiduite']">Assiduité</button>
+      <button [routerLink]="['/paye']">Paye</button>
+      <button type="submit" class="button__submit">
+        <span class="button__text">Logout</span>
+      </button>
+    </div>
+    
+  </div>
